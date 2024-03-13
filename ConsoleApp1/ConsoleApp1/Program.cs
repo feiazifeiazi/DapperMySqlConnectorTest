@@ -8,14 +8,14 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Hello, World!");
             Test();
-            const int numberOfTasks = 300;
-
+            int numberOfTasks = 200;
+             
             Task[] tasks = new Task[numberOfTasks];
 
-            for (int? i = 0; i < numberOfTasks; i++)
+            for (int i = 0; i < numberOfTasks; i++)
             {
                 string taskName = $"Task{i}";
-                tasks[i.Value] = Task.Run(() =>
+                tasks[i] = Task.Run(() =>
                 {
                     Thread.CurrentThread.Name = taskName;
                     for (int i = 0; i < 10 * 10000; i++)
