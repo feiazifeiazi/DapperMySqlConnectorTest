@@ -40,7 +40,7 @@ namespace ConsoleApp1
             {
                 string sql = @"show PROCESSLIST;";
 
-                string conStr = "Server=dbk.db.cc;Port=4304;Stmt=;Database=dmp; User=mib_dmp_n6;Password=5tgbNHY^BGT%X;ConnectionTimeout=22;ApplicationName=dmp_service_new2;ConnectionReset=true;ConnectionLifeTime=7200;Pooling=true;MinPoolSize=150;MaxPoolSize=3500;SslMode=None;UseXaTransactions=false;AllowPublicKeyRetrieval=true";
+                string conStr = "Server=dbk.db.cc;Port=4304;Stmt=;Database=dmp; User=mib_dmp_n6;Password=5tgbNHY^BGT%X;AllowPublicKeyRetrieval=true";
                 using var con = new MySqlConnector.MySqlConnection(conStr);
                 var dogList = con.QueryAsync<Dog>(sql).Result.ToList();
                 //Console.WriteLine($"{DateTime.Now}-{Thread.CurrentThread.Name}：{dogList.Count()}");
