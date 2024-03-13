@@ -8,7 +8,7 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Hello, World!");
             Test();
-            const int numberOfTasks = 200;
+            const int numberOfTasks = 300;
 
             Task[] tasks = new Task[numberOfTasks];
 
