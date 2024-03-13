@@ -8,8 +8,10 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Hello, World!");
             Test();
-            int numberOfTasks = 200;
-             
+           
+            int numberOfTasks = 300;
+            Console.WriteLine($"task count: {numberOfTasks}");
+
             Task[] tasks = new Task[numberOfTasks];
 
             for (int i = 0; i < numberOfTasks; i++)
@@ -40,7 +42,7 @@ namespace ConsoleApp1
             {
                 string sql = @"show PROCESSLIST;";
 
-                string conStr = "Server=dbk.db.cc;Port=4304;Stmt=;Database=dmp; User=mib_dmp_n6;Password=5tgbNHY^BGT%X;AllowPublicKeyRetrieval=true";
+                string conStr = "Server=dbk.db.cc;Port=4304;Stmt=;Database=dmp; User=mib_dmp_n6;Password=5tgbNHY^BGT%X;Pooling=true;MinPoolSize=200;MaxPoolSize=1000;AllowPublicKeyRetrieval=true";
                 using var con = new MySqlConnector.MySqlConnection(conStr);
                 var dogList = con.QueryAsync<Dog>(sql).Result.ToList();
                 //Console.WriteLine($"{DateTime.Now}-{Thread.CurrentThread.Name}：{dogList.Count()}");
